@@ -36,7 +36,18 @@ header, footer, article, nav, aside {
 <body>
   <header>Header</header>
   <div id="main">
-    <article>Article</article>
+    <article>
+      {% for product in products %}
+        <div>{{ product.name }}</div>
+        <div>{{ product.description }}</div>
+        <div>{{ product.vendor }}</div>
+        <div>{{ product.price }}</div>
+        <div>{{ product.category.name }}</div>
+        <div><img src='{{ product.img.url }}' style='width: 100px; height: 100px;'></div>
+        <hr>
+      {% endfor %}
+
+    </article>
     <nav>Nav</nav>
     <aside>Aside</aside>
   </div>
